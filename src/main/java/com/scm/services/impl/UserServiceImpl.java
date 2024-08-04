@@ -96,4 +96,12 @@ public class UserServiceImpl implements UserService{
         return userRepo.findAll();
     }
 
+    @Override
+    public User getUserByEmail(String email) {
+        // TODO Auto-generated method stub
+        // return userRepo.findByEmail(email).orElseThrow(()-> new ResourceNotFoundException("User Not Found"));
+
+        return userRepo.findByEmail(email).orElse(null);
+    }
+
 }
