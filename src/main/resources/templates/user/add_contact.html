@@ -23,6 +23,7 @@
             <div
               class="card block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
             >
+            <div data-th-replace="message::messagebox"></div>
               <h1 class="text-2xl font-semibold">Add New Contact</h1>
               <p class="text-gray-500">
                 This contact will be stored on cloud, you can direct email this
@@ -54,6 +55,13 @@
                       placeholder="Enter the Name"
                     />
                   </div>
+                  <p
+                    class="text-red-500"
+                    data-th-if="${#fields.hasErrors('name')}"
+                    data-th-errors="*{name}"
+                  >
+                    Invalid Name
+                  </p>
                 </div>
 
                 <!-- email form -->
@@ -76,6 +84,13 @@
                       placeholder="example@gmail.com"
                     />
                   </div>
+                  <p
+                    class="text-red-500"
+                    data-th-if="${#fields.hasErrors('email')}"
+                    data-th-errors="*{email}"
+                  >
+                    Invalid Email
+                  </p>
                 </div>
 
                 <!-- phone number  -->
@@ -98,6 +113,13 @@
                       placeholder="XXXXXXXXXX"
                     />
                   </div>
+                  <p
+                  class="text-red-500"
+                  data-th-if="${#fields.hasErrors('phoneNumber')}"
+                  data-th-errors="*{phoneNumber}"
+                >
+                  Invalid PhoneNumber
+                </p>
                 </div>
 
                 <!-- address -->
@@ -114,6 +136,13 @@
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Address of the contact"
                   ></textarea>
+                  <p
+                    class="text-red-500"
+                    data-th-if="${#fields.hasErrors('address')}"
+                    data-th-errors="*{address}"
+                  >
+                    Invalid Address
+                  </p>
                 </div>
 
                 <!-- description -->
