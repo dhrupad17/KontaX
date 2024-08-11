@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-th-replace="${title}">SCM</title>
+    <title data-th-replace="${title}">KontaX</title>
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
@@ -29,7 +29,17 @@
   <body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
     <!-- commona header -->
 
-    <div data-th-replace="navbar :: navbar"></div>
+    <!-- <div data-th-replace="navbar :: navbar"></div> -->
+
+     <!--  user is logged in : navbar -->
+     <div th:if="${loggedInUser}">
+      <div data-th-replace="~{user/user_navbar::user-navbar}"></div>
+    </div>
+
+    <!-- user is not logged : navbar -->
+    <div th:unless="${loggedInUser}">
+      <div data-th-replace="~{navbar :: navbar}"></div>
+    </div>
 
     <!-- main content -->
     <div class="p-4">
