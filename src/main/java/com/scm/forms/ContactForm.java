@@ -31,5 +31,5 @@ public class ContactForm {
     private boolean favourite;
     private String websiteLink;
     private String linkedlnLink;
-    private MultipartFile profileImage;
+    private MultipartFile contactImage;
 }

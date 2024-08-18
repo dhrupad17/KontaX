@@ -1,5 +1,8 @@
 package com.scm.controllers;
 
+import java.util.UUID;
+
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,7 @@ import com.scm.helpers.Helper;
 import com.scm.helpers.Message;
 import com.scm.helpers.MessageType;
 import com.scm.services.ContactService;
+import com.scm.services.ImageService;
 import com.scm.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -25,8 +29,13 @@ import jakarta.validation.Valid;
 @RequestMapping("/user/contacts")
 public class ContactController {
 
+    private Logger logger=org.slf4j.LoggerFactory.getLogger(ContactController.class);
+
     @Autowired
     private ContactService contactService;
+
+    @Autowired
+    private ImageService imageService;
 
     @Autowired
     private UserService userService;
@@ -52,7 +61,11 @@ public class ContactController {
 
         User user=userService.getUserByEmail(username);
 
+        logger.info("file Information : {}",contactForm.getContactImage().getOriginalFilename());
 
+        String filename=UUID.randomUUID().toString();
+        
+        String fileURL=imageService.uploadImage(contactForm.getContactImage(),filename);
 
         Contact contact=new Contact();
         contact.setName(contactForm.getName());
@@ -64,6 +77,8 @@ public class ContactController {
         contact.setUser(user);
         contact.setLinkedInLink(contactForm.getLinkedlnLink());
         contact.setWebsiteLink(contactForm.getWebsiteLink());
+        contact.setPicture(fileURL);
+        contact.setCloudinaryImagePublicId(filename);
         contactService.save(contact);
         System.out.println(contactForm);
 
