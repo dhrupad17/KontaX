@@ -25,18 +25,19 @@
             <div
               class="flex md:flex-row flex-col items-center px-4 justify-between bg-white dark:bg-gray-900"
             >
-              <form
-                
+            <form
+                data-th-object="${contactSearchForm}"
                 action=""
-                
+                data-th-action="@{'/user/contacts/search'}"
               >
-                <!-- <div
+                <div
                   class="flex space-x-3 p-5 items-center justify-start flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4"
                 >
+                  <!-- select box   -->
 
                   <div>
                     <select
-                     
+                      data-th-field="*{field}"
                       id="countries_disabled"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
@@ -68,7 +69,7 @@
                       </svg>
                     </div>
                     <input
-                     
+                      data-th-field="*{value}"
                       type="text"
                       id="table-search-users"
                       class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -81,18 +82,10 @@
                   >
                     Search
                   </button>
-                </div> -->
+                </div>
               </form>
 
-              <!-- <div>
-                <button
-                  type="button"
-                  onclick="exportData()"
-                  class="px-3 py-2 bg-green-800 text-white rounded"
-                >
-                  Export
-                </button>
-              </div> -->
+              
             </div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
               <!-- <div data-th-replace="~{message :: messagebox}"></div> -->
@@ -165,18 +158,11 @@
                     </td>
                     <td class="px-6 py-4">
                       <div>
-
-                        <!-- delete contact -->
-                        <button>
+                        <a href="">
                           <i class="fa-solid w-6 h-6 fa-trash"></i>
-                        </button>
-                        <!-- update contact -->
-                        <a>
-                          <i class="fa-solid w-6 h-6 fa-pen"></i
-                        ></a>
-
-                        <!-- viewcontact -->
-                        <button >
+                        </a>
+                        <a href=""> <i class="fa-solid w-6 h-6 fa-pen"></i></a>
+                        <button>
                           <i class="fa-solid fa-eye"></i>
                         </button>
                       </div>
@@ -249,5 +235,8 @@
         });
       }
     </script> -->
+    <script>
+      console.log("this is contacts page");
+    </script>
   </body>
 </html>
