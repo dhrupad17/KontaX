@@ -30,6 +30,14 @@ const instanceOptions = {
 
 const contactModal = new Modal(viewContactModal, options, instanceOptions);
 
+const swalWithTailwindButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 mx-2", // Added margin on both sides
+    cancelButton: "bg-gray-300 text-black font-bold py-2 px-4 rounded hover:bg-gray-400 mx-2" // Added margin on both sides
+  },
+  buttonsStyling: false
+});
+
 function openContactModal() {
   contactModal.show();
 }
@@ -67,4 +75,24 @@ async function loadContactdata(id) {
     console.log("Error: ", error);
   }
 }
+
+
+  //delete Contact
+
+  async function deleteContact(id) {
+    swalWithTailwindButtons.fire({
+      title: "Do you want to permanently delete the contact?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const url = `${baseURL}/user/contacts/delete/` + id;
+        window.location.replace(url);
+      }
+    });
+}
+
 

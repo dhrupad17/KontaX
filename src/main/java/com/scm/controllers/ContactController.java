@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -155,5 +156,21 @@ public class ContactController {
 
             return "user/search";
 
+    }
+
+    @RequestMapping("/delete/{contactId}")
+    public String deleteContact(@PathVariable String contactId,
+                                HttpSession session){
+        
+        contactService.delete(contactId);
+        logger.info("contactId {} deleted ", contactId);
+
+        session.setAttribute("message",
+            Message.builder()
+                   .content("Contact is Deleted Successfully !!")
+                   .type(MessageType.red)
+                   .build());
+        
+        return "redirect:/user/contacts";
     }
 }

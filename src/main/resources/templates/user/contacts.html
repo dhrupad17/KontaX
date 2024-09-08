@@ -88,7 +88,7 @@
               
             </div>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <!-- <div data-th-replace="~{message :: messagebox}"></div> -->
+              <div data-th-replace="~{message :: messagebox}"></div>
 
               <table
                 id="contact-table"
@@ -158,9 +158,9 @@
                     </td>
                     <td class="px-6 py-4">
                       <div>
-                        <a href="">
+                        <button th:onclick="deleteContact([[${c.id}]])">
                           <i class="fa-solid w-6 h-6 fa-trash"></i>
-                        </a>
+                        </button>
                         <a href=""> <i class="fa-solid w-6 h-6 fa-pen"></i></a>
                         <button
                           
