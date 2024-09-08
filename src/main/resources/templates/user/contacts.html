@@ -162,7 +162,10 @@
                           <i class="fa-solid w-6 h-6 fa-trash"></i>
                         </a>
                         <a href=""> <i class="fa-solid w-6 h-6 fa-pen"></i></a>
-                        <button>
+                        <button
+                          
+                          th:onclick="loadContactdata([[${c.id}]])"
+                          >
                           <i class="fa-solid fa-eye"></i>
                         </button>
                       </div>
@@ -219,22 +222,13 @@
             </div>
           </div>
         </div>
-        <!-- <div data-th-replace="~{ user/contact_modals :: contact}"></div> -->
+        <div data-th-replace="~{ user/contact_modals :: contact}"></div>
       </div>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@linways/table-to-excel@1.0.4/dist/tableToExcel.min.js"></script> -->
-    <!-- <script data-th-src="@{'/js/contacts.js'}"></script>
-    <script>
-      function exportData() {
-        TableToExcel.convert(document.getElementById("contact-table"), {
-          name: "contacts.xlsx",
-          sheet: {
-            name: "Sheet 1",
-          },
-        });
-      }
-    </script> -->
+    
+    <script data-th-src="@{'/js/contacts.js'}"></script>
+    
     <script>
       console.log("this is contacts page");
     </script>

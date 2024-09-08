@@ -40,6 +40,7 @@ public class Contact {
     private String cloudinaryImagePublicId;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
