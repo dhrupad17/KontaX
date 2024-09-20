@@ -173,4 +173,50 @@ public class ContactController {
         
         return "redirect:/user/contacts";
     }
+
+    @GetMapping("/view/{contactId}")
+    public String updateContactFormView(
+        @PathVariable("contactId") String contactId, 
+        Model model){
+
+            var contact=contactService.getById(contactId);
+
+            ContactForm contactForm=new ContactForm();
+
+            contactForm.setName(contact.getName());
+            contactForm.setEmail(contact.getEmail());
+            contactForm.setPhoneNumber(contact.getPhoneNumber());
+            contactForm.setAddress(contact.getAddress());
+            contactForm.setDescription(contact.getDescription());
+            contactForm.setFavourite(contact.isFavourite());
+            contactForm.setWebsiteLink(contact.getWebsiteLink());
+            contactForm.setLinkedlnLink(contact.getLinkedInLink());
+            contactForm.setPicture(contact.getPicture());
+
+            model.addAttribute("contactForm", contactForm);
+            model.addAttribute("contactId", contactId);
+
+            return "user/update_contact_view";
+
+        }
+
+    @RequestMapping(value="/update/{contactId}", method=RequestMethod.POST)
+    public String updateContact(@PathVariable("contactId") String contactId, @ModelAttribute ContactForm contactForm, Model model){
+
+        var con=new Contact();
+        con.setName(contactForm.getName());
+        con.setEmail(contactForm.getEmail());
+        con.setPhoneNumber(contactForm.getPhoneNumber());
+        con.setAddress(contactForm.getAddress());
+        con.setDescription(contactForm.getDescription());
+        con.setFavourite(contactForm.isFavourite());
+        con.setWebsiteLink(contactForm.getWebsiteLink());
+        con.setLinkedInLink(contactForm.getLinkedlnLink());
+        con.setPicture(contactForm.getPicture());
+
+        var updateCon=contactService.update(con);
+        logger.info("updated");
+
+        return "Hello Hii";
+    }
 }

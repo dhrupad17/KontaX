@@ -32,4 +32,6 @@ public class ContactForm {
     private String websiteLink;
     private String linkedlnLink;
     private MultipartFile contactImage;
+
+    private String picture;
 }
