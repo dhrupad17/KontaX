@@ -6,16 +6,69 @@
   <head>
     <title>Contact Us Page</title>
   </head>
-  <body>
-    <div id="content">
-      <h1>Welcome to Contact page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        ratione!
-      </p>
+  <body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
+    <div id="content" class="min-h-screen flex flex-col justify-center items-center py-12">
+      <div class="max-w-lg w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+        <div class="flex flex-col items-center text-center">
+          <!-- Developer's Profile Picture -->
+          <img
+            data-th-src="@{'/Images/dev1.jpg'}"
+            alt="Developer Picture"
+            class="w-32 h-32 rounded-full mb-4"
+          />
+
+          <!-- Developer's Name -->
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            Dhrupad Chakraborty
+          </h2>
+
+          <!-- Developer's Address -->
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Kolkata, West Bengal, India
+          </p>
+
+          <!-- Social Links -->
+          <div class="flex justify-center space-x-4 mb-6">
+            <a
+              th:href="@{https://www.linkedin.com/in/dhrupad-chakraborty/}"
+              class="text-blue-500 hover:text-blue-700"
+              target="_blank"
+              ><i class="fab fa-linkedin fa-2x"></i
+            ></a>
+            <a
+              th:href="@{https://github.com/dhrupad17}"
+              class="text-gray-900 dark:text-white hover:text-gray-700"
+              target="_blank"
+              ><i class="fab fa-github fa-2x"></i
+            ></a>
+            <a
+              th:href="@{https://dhrupadchakraborty17.netlify.app/}"
+              class="text-purple-500 hover:text-purple-700"
+              target="_blank"
+              ><i class="fas fa-globe fa-2x"></i
+            ></a>
+          </div>
+
+          <!-- Contact Me Button -->
+          <a
+            th:href="@{mailto:dhrupadchakraborty123@gmail.com}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300"
+            >Contact Me</a
+          >
+        </div>
+      </div>
     </div>
+
+    <!-- Scripts for icons and theme -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+      integrity="sha512-jQdl/XmVbr9Fz5GLFHjUvOk/e3k5Fg2NBd/x/0+0gGFu3fD+a9QlX1bkpuMJ6mymMSFZ63nNZx8IzTZ8YpKyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script>
-      console.log("Home page");
+      console.log("Contact page loaded");
     </script>
   </body>
 </html>
