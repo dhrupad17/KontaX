@@ -71,9 +71,7 @@ public class ContactController {
 
         logger.info("file Information : {}",contactForm.getContactImage().getOriginalFilename());
 
-        String filename=UUID.randomUUID().toString();
-        
-        String fileURL=imageService.uploadImage(contactForm.getContactImage(),filename);
+       
 
         Contact contact=new Contact();
         contact.setName(contactForm.getName());
@@ -85,8 +83,14 @@ public class ContactController {
         contact.setUser(user);
         contact.setLinkedInLink(contactForm.getLinkedlnLink());
         contact.setWebsiteLink(contactForm.getWebsiteLink());
+
+       
+        String filename=UUID.randomUUID().toString();
+        
+        String fileURL=imageService.uploadImage(contactForm.getContactImage(),filename);
         contact.setPicture(fileURL);
         contact.setCloudinaryImagePublicId(filename);
+
         contactService.save(contact);
         System.out.println(contactForm);
 
@@ -94,8 +98,6 @@ public class ContactController {
 
         return "redirect:/user/contacts/add";
     }
-
-    
    
     @RequestMapping
     public String viewContacts(
