@@ -201,9 +201,17 @@ public class ContactController {
         }
 
     @RequestMapping(value="/update/{contactId}", method=RequestMethod.POST)
-    public String updateContact(@PathVariable("contactId") String contactId, @ModelAttribute ContactForm contactForm, Model model){
+    public String updateContact(@PathVariable("contactId") String contactId, @Valid @ModelAttribute ContactForm contactForm, 
+    BindingResult bindingResult,
+    Model model,HttpSession session){
 
-        var con=new Contact();
+        if(bindingResult.hasErrors()){ 
+            return "user/update_contact_view";
+        }
+
+        var con=contactService.getById(contactId);
+
+        con.setId(contactId);
         con.setName(contactForm.getName());
         con.setEmail(contactForm.getEmail());
         con.setPhoneNumber(contactForm.getPhoneNumber());
@@ -214,9 +222,22 @@ public class ContactController {
         con.setLinkedInLink(contactForm.getLinkedlnLink());
         con.setPicture(contactForm.getPicture());
 
-        var updateCon=contactService.update(con);
-        logger.info("updated");
+        if(contactForm.getContactImage() !=null && !contactForm.getContactImage().isEmpty()){
+            logger.info("File is not Empty");
+            String fileName=UUID.randomUUID().toString();
+            String imageUrl=imageService.uploadImage(contactForm.getContactImage(), fileName);
+            con.setCloudinaryImagePublicId(fileName);
+            con.setPicture(imageUrl);
+            contactForm.setPicture(imageUrl);
+        }else{
+            logger.info("File is Empty");
+        }
 
-        return "Hello Hii";
+        var updateCon=contactService.update(con);
+        logger.info("updated Contact {}",updateCon);
+
+        session.setAttribute("message", Message.builder().content("Contact Updated !!").type(MessageType.green).build());
+
+        return "redirect:/user/contacts/view/" + contactId;
     }
 }
