@@ -4,21 +4,115 @@
   th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
 >
   <head>
-    <title>About Page</title>
+    <title>About Us - KontaX</title>
   </head>
   <body>
-    <div id="content">
-      <h1>Welcome to about page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        ratione!
-      </p>
+    <div id="content" class="min-h-screen flex flex-col justify-between">
+      <!-- Hero Section -->
+      <section class="bg-gray-100 dark:bg-gray-900 py-16 px-6 text-center">
+        <div class="max-w-7xl mx-auto">
+          <h1 class="text-5xl font-bold text-gray-900 dark:text-white">
+            About <span class="text-blue-400">K</span>onta<span class="text-blue-400">X</span>
+          </h1>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            Discover more about our mission to provide a smarter way to manage your contacts efficiently.
+          </p>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="bg-white dark:bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- Left Section: Image -->
+          <div class="flex items-center justify-center">
+            <img
+              data-th-src="@{'/Images/about.png'}"
+              alt="About KontaX"
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- Right Section: Text -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">
+              Our Mission
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">
+              KontaX is your smart contact manager designed to simplify how you store, organize, and access your contacts. With integrated features like profile management, contact categorization, and analytics, managing your network has never been easier. 
+            </p>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">
+              Our goal is to streamline your contacts, making it effortless to manage both personal and professional relationships. Whether you are a business owner, a freelancer, or simply managing your social network, KontaX is the perfect solution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Team Section -->
+      <section class="bg-gray-100 dark:bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Meet the Developer</h2>
+          <div class="flex justify-center">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-xs">
+              <img
+                data-th-src="@{'/Images/dev1.jpg'}"
+                alt="Developer Picture"
+                class="w-32 h-32 rounded-full mb-4 mx-auto"
+              />
+              <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Dhrupad Chakraborty</h3>
+              <p class="text-gray-600 dark:text-gray-400">Lead Developer</p>
+              <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Building smart and efficient web applications.</p>
+      
+              <!-- Social Links -->
+              <div class="mt-4 flex justify-center space-x-4">
+                <a
+                  th:href="@{https://www.linkedin.com/in/dhrupad-chakraborty/}"
+                  target="_blank"
+                  class="text-blue-500 hover:text-blue-700"
+                >
+                  <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a
+                  th:href="@{https://github.com/dhrupad17}"
+                  target="_blank"
+                  class="text-gray-800 dark:text-gray-300 hover:text-gray-500 dark:hover:text-white"
+                >
+                  <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a
+                  th:href="@{https://dhrupadchakraborty17.netlify.app/}"
+                  target="_blank"
+                  class="text-pink-500 hover:text-pink-700"
+                >
+                  <i class="fas fa-link text-2xl"></i>
+                </a>
+              </div>
+      
+              <!-- Contact Button -->
+              <div class="mt-6">
+                <a
+                  href="mailto:dhrupadchakraborty123@gmail.com"
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+                  >Contact Me</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- Footer -->
+      <footer class="bg-gray-100 dark:bg-gray-900 py-4 text-center">
+        <p class="text-gray-600 dark:text-gray-400">
+          &copy; 2024 KontaX. All rights reserved.
+        </p>
+      </footer>
     </div>
+
+    <!-- Scripts -->
     <script>
       console.log("about page");
-    </script>
-    <script>
-      console.log("second about page script");
     </script>
   </body>
 </html>

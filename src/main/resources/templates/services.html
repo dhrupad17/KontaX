@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
   <head>
-  
-    <title>
-      Services
-    </title>
+    <title>Services - KontaX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   </head>
   <body>
-    <section id="content">
-      <h1>Welcome to services page</h1>
-      <h2>Services offered by SCM</h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore assumenda rerum harum mollitia incidunt nesciunt dignissimos esse dicta reprehenderit quam, quisquam aspernatur enim consequatur accusamus, minima alias odit ducimus.<10></10>
+    <div id="content" class="min-h-screen flex flex-col justify-between">
+    <section id="content" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">Our Services</h1>
+        <h2 class="text-2xl text-gray-700 dark:text-gray-300 mb-12">Explore the powerful features offered by <span class="text-blue-400">K</span>onta<span class="text-blue-400">X</span></h2>
+        
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Service 1: Contact Management -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-address-book text-4xl text-blue-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Smart Contact Management</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Efficiently store and categorize your contacts with comprehensive fields such as phone number, email, portfolio link, and social media profiles.</p>
+          </div>
+          
+          <!-- Service 2: Profile Creation -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-user-plus text-4xl text-green-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Easy Profile Creation</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Sign up via email, Google, or GitHub to create personalized profiles with access to a customizable dashboard to manage all your contacts.</p>
+          </div>
+          
+          <!-- Service 3: Advanced Analytics -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-chart-line text-4xl text-purple-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Advanced Analytics</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Gain valuable insights into your contact network with visual data analytics, helping you track relationships and optimize your connections.</p>
+          </div>
+          
+          <!-- Service 4: Data Security -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-lock text-4xl text-red-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Secure Data Storage</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Your contacts' data is securely stored with encryption, ensuring privacy and protection from unauthorized access.</p>
+          </div>
+          
+          <!-- Service 5: Contact Sharing -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-share-alt text-4xl text-yellow-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Easy Contact Sharing</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Seamlessly share individual or grouped contacts with colleagues or clients via email, or export them in a variety of formats.</p>
+          </div>
+          
+          <!-- Service 6: Customizable Dashboard -->
+          <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <i class="fas fa-tachometer-alt text-4xl text-teal-500"></i>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Customizable Dashboard</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">Tailor your dashboard layout to suit your needs, offering quick access to frequently used tools and analytics.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
+     <!-- Footer -->
+     <footer class="bg-gray-100 dark:bg-gray-900 py-4 text-center">
+      <p class="text-gray-600 dark:text-gray-400">
+        &copy; 2024 KontaX. All rights reserved.
+      </p>
+    </footer>
+  </div>
+
+   <!-- Scripts -->
+   <script>
+    console.log("about page");
+  </script>
   </body>
 </html>
