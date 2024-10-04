@@ -125,5 +125,5 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ---
 
-### Made with ❤️ by [Dhrupad Chakraborty](https://github.com/dhrupad17)
+### Made with ❤️ by [Dhrupad Chakraborty](https://www.linkedin.com/in/dhrupad-chakraborty/)
 
