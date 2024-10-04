@@ -48,7 +48,32 @@
 - **Cloud Storage**: Cloudinary is integrated for hosting and managing images (especially contact images).
 - **Database**: MySQL is used to store user, contact, and profile data.
 
----
+## Tools Used:
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <table>
+      <tr>
+        <td><img src="https://skillicons.dev/icons?i=idea" alt="IntelliJ IDEA" /></td>
+        <td><img src="https://skillicons.dev/icons?i=git" alt="Git" /></td>
+        <td><img src="https://skillicons.dev/icons?i=java" alt="Java" /></td>
+        <td><img src="https://skillicons.dev/icons?i=maven" alt="Maven" /></td>
+        <td><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" /></td>
+        <td><img src="https://skillicons.dev/icons?i=postman" alt="Postman" /></td>
+        <td><img src="https://skillicons.dev/icons?i=spring" alt="Spring" /></td>
+      </tr>
+      <tr>
+        <td align="center">IntelliJ IDEA</td>
+        <td align="center">Git</td>
+        <td align="center">Java</td>
+        <td align="center">Maven</td>
+        <td align="center">PostgreSQL</td>
+        <td align="center">Postman</td>
+        <td align="center">SpringBoot</td>
+      </tr>
+    </table>
+  </a>
+</p>
 
 ### Database Directory Structure 
 
