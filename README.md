@@ -54,22 +54,30 @@
   <a href="https://skillicons.dev">
     <table>
       <tr>
-        <td><img src="https://skillicons.dev/icons?i=idea" alt="IntelliJ IDEA" /></td>
+        <td><img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" /></td>
         <td><img src="https://skillicons.dev/icons?i=git" alt="Git" /></td>
         <td><img src="https://skillicons.dev/icons?i=java" alt="Java" /></td>
         <td><img src="https://skillicons.dev/icons?i=maven" alt="Maven" /></td>
-        <td><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" /></td>
+        <td><img src="https://skillicons.dev/icons?i=mysql" alt="MYSQL" /></td>
         <td><img src="https://skillicons.dev/icons?i=postman" alt="Postman" /></td>
         <td><img src="https://skillicons.dev/icons?i=spring" alt="Spring" /></td>
+        <td><img src="https://skillicons.dev/icons?i=aws" alt="AWS" /></td>
+        <td><img src="https://skillicons.dev/icons?i=docker" alt="Docker" /></td>
+        <td><img src="https://skillicons.dev/icons?i=js" alt="Js" /></td>
+        <td><img src="https://skillicons.dev/icons?i=tailwind" alt="TailWind" /></td>
       </tr>
       <tr>
-        <td align="center">IntelliJ IDEA</td>
+        <td align="center">Visual Studio Code</td>
         <td align="center">Git</td>
         <td align="center">Java</td>
         <td align="center">Maven</td>
-        <td align="center">PostgreSQL</td>
+        <td align="center">MYSQL</td>
         <td align="center">Postman</td>
         <td align="center">SpringBoot</td>
+        <td align="center">AWS</td>
+        <td align="center">Docker</td>
+        <td align="center">Java Script</td>
+        <td align="center">Tailwind CSS</td>
       </tr>
     </table>
   </a>
