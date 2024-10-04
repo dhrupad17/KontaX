@@ -109,4 +109,21 @@
      ```bash
      mvn spring-boot:run
      ```
+## 🙏 Acknowledgment
+
+I would like to extend my heartfelt thanks to [Durgesh Tiwari](https://www.youtube.com/playlist?list=PL0zysOflRCemNS641tpw66bcaFylyIGsA) for brainstorming the original idea behind building a Smart Contact Manager. While I have added many new features and enhancements to the application, Durgesh's insights laid the foundation for this project. I have many exciting features planned for future updates, and I look forward to building on this strong foundation.
+
+
+## 🙌 Contributing
+We welcome contributions! Feel free to fork the project, make your changes, and submit a pull request with detailed information about your updates.
+
+## 📬 Feedback
+If you have any suggestions, find bugs, or have general feedback, please fill out this [Google Form](https://forms.gle/example-form-link).
+
+## 🛡️ License
+This project is licensed under the MIT License. You are free to use, modify, and distribute it, as long as the terms of the license are respected.
+
+---
+
+### Made with ❤️ by [Dhrupad Chakraborty](https://github.com/dhrupad17)
 
