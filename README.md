@@ -99,7 +99,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-repo/kontax.git
+   git clone https://github.com/dhrupad17/KontaX.git
 
 2. **Database Setup**:
    - Create a new MySQL database and configure the connection in the `application.properties` file.
